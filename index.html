@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Calculate</title>
+</head>
+<body>
+
+<h1>Challenge p.16</h1>
+<script>
+    document.write('<h3>Sans Prompt</h3>');
+    let firstNumber = 1;
+    let secondNumber = 2;
+    let operator = "+";
+
+    console.log(firstNumber+operator+secondNumber);
+/*
+    document.write(eval(firstNumber+(operator)+secondNumber));
+*/
+    document.write('<h3>Avec Prompt</h3>');
+    firstNumber = window.prompt("Saisir le premier nombre ?");
+    secondNumber = window.prompt("Saisir le second nombre ?");
+    console.log(firstNumber+operator+secondNumber);
+/*
+    document.write(eval(firstNumber+(operator)+secondNumber));
+*/
+    document.write('<h2>Challenge p.23</h2>');
+    document.write(firstNumber+secondNumber);
+    console.log(firstNumber+secondNumber);
+    document.write(parseInt(firstNumber)+parseInt(secondNumber));
+    console.log(parseInt(firstNumber)+parseInt(secondNumber));
+    document.write('<h2>Challenge p.30</h2>');
+    if(operator=="+") document.write(firstNumber+secondNumber);
+    if(operator=="+") console.log(firstNumber+secondNumber);
+    else  console.log(firstNumber-secondNumber);
+    document.write('<h2>Challenge p.32</h2>');
+    switch (operator){
+        case "+":
+            document.write(firstNumber+secondNumber);
+            console.log(firstNumber+secondNumber);
+            break;
+        case "-":
+            document.write(firstNumber-secondNumber);
+            console.log(firstNumber-secondNumber);
+            break;
+        case "*":
+            document.write(firstNumber*secondNumber);
+            console.log(firstNumber*secondNumber);
+            break;
+        case "/":
+            document.write(firstNumber/secondNumber);
+            console.log(firstNumber/secondNumber);
+            break;
+        default:
+            document.write('Invalid operator');
+            console.log('Invalid operator');
+    }
+
+    document.write('<h2>Challenge p.34</h2>');
+    let playerName = window.prompt("Ton nom ?");
+    const random = Math.floor(Math.random()*100)+1;
+    console.log(random);
+    let playerNumber = parseInt(window.prompt("Nombre de joueur"));
+    let round=1;
+    while(playerNumber!==random)
+    {
+        if(isNaN(playerNumber)){
+            playerNumber = parseInt(prompt("Un nombre !"));
+        }else if(playerNumber > random) {
+            playerNumber = parseInt(prompt("Dommage ! c'est plus petit"));
+        }else if(playerNumber < random) {
+            playerNumber = parseInt(prompt("Dommage c'est plus grand"));
+        }
+        round++;
+    }
+    document.write("Bravo, " + playerName + "! Tu as gagné en " + round + " coups!");
+
+</script>
+</body>
+</html>
